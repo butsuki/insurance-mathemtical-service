@@ -11,6 +11,8 @@ import java.time.LocalDate;
 @Data
 @ToString
 public class CalcPremiumModel {
+    // 契約年月日
+    private LocalDate contractDay;
     // 年金支払いタイプ
     private String pensionType;
     // 年金支払期間
@@ -21,8 +23,6 @@ public class CalcPremiumModel {
     private int premiumPaymentPeriod;
     // 据置期間
     private int deferredPeriod;
-    // 年金支払開始日
-    private LocalDate startDay;
     // 年金年額
     private int pensionAnnual;
     // 被保険者年齢

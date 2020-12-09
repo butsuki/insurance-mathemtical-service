@@ -16,7 +16,7 @@ public class PremiumController {
     @RequestMapping("premium")
     public CalcPremiumResponse getPremium(@NonNull @RequestBody CalcPremiumModel model){
 
-        CalcPremiumService calcPremiumService = new CalcPremiumService(model.getPensionType(),model.getPensionPaymentPeriod(),model.getPremiumType(),model.getPremiumPaymentPeriod(),model.getDeferredPeriod(),model.getPensionAnnual(),model.getInsuredAge(),model.getInsuredGender());
+        CalcPremiumService calcPremiumService = new CalcPremiumService(model.getContractDay(), model.getPensionType(),model.getPensionPaymentPeriod(),model.getPremiumType(),model.getPremiumPaymentPeriod(),model.getDeferredPeriod(),model.getPensionAnnual(),model.getInsuredAge(),model.getInsuredGender());
         CalcPremiumResponse calcPremiumResponse = new CalcPremiumResponse();
         calcPremiumResponse.setPremium(calcPremiumService.getPremium());
         return calcPremiumResponse;

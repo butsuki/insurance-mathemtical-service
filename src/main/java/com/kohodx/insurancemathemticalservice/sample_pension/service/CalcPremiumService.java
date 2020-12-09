@@ -15,6 +15,8 @@ public class CalcPremiumService {
     @Autowired
     CalcPremiumRateService calcPremiumRateService;
 
+    // 契約年月日
+    private LocalDate contractDay;
     // 年金支払いタイプ
     private PensionType pensionType;
     // 年金支払期間
@@ -37,7 +39,8 @@ public class CalcPremiumService {
     //保険料
     private int premium;
 
-    public CalcPremiumService(@NonNull String pensionType, int pensionPaymentPeriod, @NonNull String premiumType, @NonNull int premiumPaymentPeriod, @NonNull int deferredPeriod, int pensionAnnual, int insuredAge, String insuredGender){
+    public CalcPremiumService(@NonNull LocalDate contractDay, @NonNull String pensionType, int pensionPaymentPeriod, @NonNull String premiumType, @NonNull int premiumPaymentPeriod, @NonNull int deferredPeriod, int pensionAnnual, int insuredAge, String insuredGender){
+        this.contractDay = contractDay;
         this.pensionType = PensionType.valueOf(pensionType);
         this.pensionPaymentPeriod = pensionPaymentPeriod;
         this.premiumType = PremiumType.valueOf(premiumType);
