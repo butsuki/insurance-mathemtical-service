@@ -39,16 +39,16 @@ public class CalcPremiumService {
     //保険料
     private int premium;
 
-    public CalcPremiumService(@NonNull LocalDate contractDay, @NonNull String pensionType, int pensionPaymentPeriod, @NonNull String premiumType, @NonNull int premiumPaymentPeriod, @NonNull int deferredPeriod, int pensionAnnual, int insuredAge, String insuredGender){
+    public CalcPremiumService(LocalDate contractDay, PensionType pensionType, int pensionPaymentPeriod, PremiumType premiumType, int premiumPaymentPeriod, int deferredPeriod, int pensionAnnual, int insuredAge, Gender insuredGender){
         this.contractDay = contractDay;
-        this.pensionType = PensionType.valueOf(pensionType);
+        this.pensionType = pensionType;
         this.pensionPaymentPeriod = pensionPaymentPeriod;
-        this.premiumType = PremiumType.valueOf(premiumType);
+        this.premiumType = premiumType;
         this.premiumPaymentPeriod = premiumPaymentPeriod;
         this.deferredPeriod = deferredPeriod;
         this.pensionAnnual = pensionAnnual;
         this.insuredAge = insuredAge;
-        this.insuredGender = Gender.valueOf(insuredGender);
+        this.insuredGender = insuredGender;
 
         //todo 年齢範囲チェックを別に作って呼ぶ
         //todo ちゃんと計算する
