@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 @Data
 @ToString
-public class Sample_SyusinCalcPremiumModel {
+public class SampleSyusinCalcPremiumModel {
     // 契約年月日
     private LocalDate contractDay;
     // 被保険者年齢

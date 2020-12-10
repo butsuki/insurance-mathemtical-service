@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalDate;
 
 @Data
-public class Sample_PensionCalcPremiumService {
+public class SamplePensionCalcPremiumService {
 
     @Autowired
-    Sample_PensionCalcPremiumRateService samplePensionCalcPremiumRateService;
+    SamplePensionCalcPremiumRateService samplePensionCalcPremiumRateService;
 
     // 契約年月日
     private LocalDate contractDay;
@@ -38,7 +38,7 @@ public class Sample_PensionCalcPremiumService {
     //保険料
     private int premium;
 
-    public Sample_PensionCalcPremiumService(LocalDate contractDay, PensionType pensionType, int pensionPaymentPeriod, PremiumType premiumType, int premiumPaymentPeriod, int deferredPeriod, int pensionAnnual, int insuredAge, Gender insuredGender){
+    public SamplePensionCalcPremiumService(LocalDate contractDay, PensionType pensionType, int pensionPaymentPeriod, PremiumType premiumType, int premiumPaymentPeriod, int deferredPeriod, int pensionAnnual, int insuredAge, Gender insuredGender){
         this.contractDay = contractDay;
         this.pensionType = pensionType;
         this.pensionPaymentPeriod = pensionPaymentPeriod;

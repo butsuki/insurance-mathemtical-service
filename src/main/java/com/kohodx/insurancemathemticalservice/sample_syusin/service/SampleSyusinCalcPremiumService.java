@@ -1,18 +1,16 @@
 package com.kohodx.insurancemathemticalservice.sample_syusin.service;
 
 import com.kohodx.insurancemathemticalservice.common.vo.Gender;
-import com.kohodx.insurancemathemticalservice.common.vo.PensionType;
-import com.kohodx.insurancemathemticalservice.common.vo.PremiumType;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 
 @Data
-public class Sample_SyusinCalcPremiumService {
+public class SampleSyusinCalcPremiumService {
 
     @Autowired
-    Sample_SyusinCalcPremiumRateService sampleSyusinCalcPremiumRateService;
+    SampleSyusinCalcPremiumRateService sampleSyusinCalcPremiumRateService;
 
     // 契約年月日
     private LocalDate contractDay;
@@ -26,7 +24,7 @@ public class Sample_SyusinCalcPremiumService {
     //保険料
     private int premium;
 
-    public Sample_SyusinCalcPremiumService(LocalDate contractDay, int claim, int insuredAge, Gender insuredGender){
+    public SampleSyusinCalcPremiumService(LocalDate contractDay, int claim, int insuredAge, Gender insuredGender){
         this.contractDay = contractDay;
         this.insuredAge = insuredAge;
         this.insuredGender = insuredGender;
