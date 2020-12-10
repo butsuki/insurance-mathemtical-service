@@ -4,16 +4,15 @@ import com.kohodx.insurancemathemticalservice.common.vo.Gender;
 import com.kohodx.insurancemathemticalservice.common.vo.PensionType;
 import com.kohodx.insurancemathemticalservice.common.vo.PremiumType;
 import lombok.Data;
-import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 
 @Data
-public class CalcPremiumService {
+public class Sample_PensionCalcPremiumService {
 
     @Autowired
-    CalcPremiumRateService calcPremiumRateService;
+    Sample_PensionCalcPremiumRateService samplePensionCalcPremiumRateService;
 
     // 契約年月日
     private LocalDate contractDay;
@@ -39,7 +38,7 @@ public class CalcPremiumService {
     //保険料
     private int premium;
 
-    public CalcPremiumService(LocalDate contractDay, PensionType pensionType, int pensionPaymentPeriod, PremiumType premiumType, int premiumPaymentPeriod, int deferredPeriod, int pensionAnnual, int insuredAge, Gender insuredGender){
+    public Sample_PensionCalcPremiumService(LocalDate contractDay, PensionType pensionType, int pensionPaymentPeriod, PremiumType premiumType, int premiumPaymentPeriod, int deferredPeriod, int pensionAnnual, int insuredAge, Gender insuredGender){
         this.contractDay = contractDay;
         this.pensionType = pensionType;
         this.pensionPaymentPeriod = pensionPaymentPeriod;
@@ -52,6 +51,6 @@ public class CalcPremiumService {
 
         //todo 年齢範囲チェックを別に作って呼ぶ
         //todo ちゃんと計算する
-        this.premium = (int) (pensionAnnual * calcPremiumRateService.getRate());
+        this.premium = (int) (pensionAnnual * samplePensionCalcPremiumRateService.getRate());
     }
 }

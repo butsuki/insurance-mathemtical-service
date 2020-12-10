@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 @Data
 @ToString
-public class CalcPremiumModel {
+public class Sample_PensionCalcPremiumModel {
     // 契約年月日
     private LocalDate contractDay;
     // 年金支払いタイプ
