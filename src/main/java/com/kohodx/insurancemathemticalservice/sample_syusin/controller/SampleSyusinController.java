@@ -1,5 +1,7 @@
 package com.kohodx.insurancemathemticalservice.sample_syusin.controller;
 
+import com.kohodx.insurancemathemticalservice.common.model.CalcCancellationRefund;
+import com.kohodx.insurancemathemticalservice.common.model.CalcPolicyReserveResponse;
 import com.kohodx.insurancemathemticalservice.common.model.CalcPremiumResponse;
 import com.kohodx.insurancemathemticalservice.sample_syusin.model.SampleSyusinCalcPremiumModel;
 import com.kohodx.insurancemathemticalservice.sample_syusin.service.SampleSyusinCalcPremiumService;
@@ -26,4 +28,20 @@ public class SampleSyusinController {
         calcPremiumResponse.setPremium(sampleSyusinCalcPremiumService.getPremium());
         return calcPremiumResponse;
     }
+    @GetMapping("policyreserve")
+    @ApiOperation("責任準備金計算")
+    //todo requestBodyの追加
+    public CalcPolicyReserveResponse calcPolicyReserve(){
+        CalcPolicyReserveResponse calcPolicyReserveResponse = new CalcPolicyReserveResponse();
+        return calcPolicyReserveResponse;
+    }
+
+    @GetMapping("cancellationrefund")
+    @ApiOperation("解約返戻金計算")
+    //todo requestBodyの追加
+    public CalcCancellationRefund calcCancellationRefund(){
+        CalcCancellationRefund calcCancellationRefund = new CalcCancellationRefund();
+        return calcCancellationRefund;
+    }
+
 }
