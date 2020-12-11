@@ -1,6 +1,6 @@
 package com.kohodx.insurancemathemticalservice.sample_pension.controller;
 
-import com.kohodx.insurancemathemticalservice.common.model.CalcCancellationRefund;
+import com.kohodx.insurancemathemticalservice.common.model.CalcCancellationRefundResponse;
 import com.kohodx.insurancemathemticalservice.common.model.CalcPolicyReserveResponse;
 import com.kohodx.insurancemathemticalservice.common.model.CalcPremiumResponse;
 import com.kohodx.insurancemathemticalservice.sample_pension.model.SamplePensionCalcPremiumModel;
@@ -32,15 +32,21 @@ public class SamplePensionController {
     @ApiOperation("責任準備金計算")
     //todo requestBodyの追加
     public CalcPolicyReserveResponse calcPolicyReserve(){
+        //todo constructor呼び出し
         CalcPolicyReserveResponse calcPolicyReserveResponse = new CalcPolicyReserveResponse();
+        //todo 計算呼び出しなど
+        calcPolicyReserveResponse.setPolicyReserve(10000);
         return calcPolicyReserveResponse;
     }
 
     @GetMapping("cancellationrefund")
     @ApiOperation("解約返戻金計算")
     //todo requestBodyの追加
-    public CalcCancellationRefund calcCancellationRefund(){
-        CalcCancellationRefund calcCancellationRefund = new CalcCancellationRefund();
-        return calcCancellationRefund;
+    public CalcCancellationRefundResponse calcCancellationRefund(){
+        //todo constructor呼び出し
+        CalcCancellationRefundResponse calcCancellationRefundResponse = new CalcCancellationRefundResponse();
+        //todo 計算呼び出しなど
+        calcCancellationRefundResponse.setCancellationRefund(10000);
+        return calcCancellationRefundResponse;
     }
 }

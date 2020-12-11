@@ -3,6 +3,6 @@ package com.kohodx.insurancemathemticalservice.common.model;
 import lombok.Data;
 
 @Data
-public class CalcPolicyReserveResponse {
-    private int policyReserve;
+public class CalcCancellationRefundResponse {
+    private int cancellationRefund;
 }
