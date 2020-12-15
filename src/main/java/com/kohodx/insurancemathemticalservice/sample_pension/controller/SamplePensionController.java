@@ -40,7 +40,7 @@ public class SamplePensionController {
     }
 
     @GetMapping("cancellationrefund")
-    @ApiOperation("解約返戻金計算")
+    @ApiOperation("解約返戻金計算a")
     //todo requestBodyの追加
     public CalcCancellationRefundResponse calcCancellationRefund(){
         //todo constructor呼び出し
