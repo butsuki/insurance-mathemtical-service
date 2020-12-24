@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public class SampleSyusinCalcPremiumService {
 
     @Autowired
-    SampleSyusinCalcPremiumRateService sampleSyusinCalcPremiumRateService;
+    SampleSyusinCalcPremiumService sampleSyusinCalcPremiumService;
 
     // 保険金（万単位）
     private int insuredS;
@@ -18,18 +18,17 @@ public class SampleSyusinCalcPremiumService {
     private int insuredAge;
     private int Age;
     // 被保険者性別
-    private Gender insuredGender;
+    private String insuredGender;
     //保険料
     private int premium;
 
-    public SampleSyusinCalcPremiumService(int insuredS, int claim, int insuredAge, Gender insuredGender){
+    public SampleSyusinCalcPremiumService(int insuredS,  int insuredAge, String insuredGender){
         this.insuredS = insuredS;
         this.insuredAge = insuredAge;
         this.insuredGender = insuredGender;
-        this.claim = claim;
 
         //保険料計算　107歳時一時払いを全額とし割引計算
-        if(Gender = "famale"){
+        if(insuredGender = 'famale'){
             Age = insuredAge - 5;
         } else {
             Age = insuredAge;
