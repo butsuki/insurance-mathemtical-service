@@ -5,6 +5,7 @@ import com.kohodx.insurancemathemticalservice.common.model.CalcPremiumResponse;
 import com.kohodx.insurancemathemticalservice.common.vo.Gender;
 =======
 >>>>>>> origin/team1_branch
+import com.kohodx.insurancemathemticalservice.ichibarai_syushin.service.Ichibarai_SyusinCalcPremiumService;
 import com.kohodx.insurancemathemticalservice.sample_pension.model.SamplePensionCalcPremiumModel;
 import com.kohodx.insurancemathemticalservice.sample_pension.service.SamplePensionCalcPremiumService;
 import io.swagger.annotations.Api;
@@ -29,12 +30,13 @@ public class Ichibarai_syushinController {
     public CalcPremiumResponse calcPremium(@NonNull @RequestBody SamplePensionCalcPremiumModel model){
 
         CalcPremiumResponse calcPremiumResponse = new CalcPremiumResponse();
-        calcPremiumResponse.setPremium(sampleSyusinCalcPremiumService.getPremium());
+        calcPremiumResponse.setPremium(Ichibarai_SyusinCalcPremiumService.getPremium());
 =======
     public CalcPremiumResponse calcPremium(@NonNull @RequestBody SamplePensionCalcPremiumModel model){
 
         CalcPremiumResponse calcPremiumResponse = new CalcPremiumResponse();
-        calcPremiumResponse.setPremium(10000);
+        //calcPremiumResponse.setPremium(10000);
+        calcPremiumResponse.setPremium(Premium);
 >>>>>>> origin/team1_branch
         return calcPremiumResponse;
     }
