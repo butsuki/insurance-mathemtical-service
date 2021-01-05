@@ -1,7 +1,10 @@
 package com.kohodx.insurancemathemticalservice.ichibarai_syushin.controller;
 
 import com.kohodx.insurancemathemticalservice.common.model.CalcPremiumResponse;
+import com.kohodx.insurancemathemticalservice.ichibarai_syushin.model.IchijibaraiSyusinCalcPremiumModel;
+import com.kohodx.insurancemathemticalservice.ichibarai_syushin.service.Ichibarai_SyusinCalcPremiumService;
 import com.kohodx.insurancemathemticalservice.sample_pension.model.SamplePensionCalcPremiumModel;
+import com.kohodx.insurancemathemticalservice.sample_syusin.service.SampleSyusinCalcPremiumService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.NonNull;
@@ -20,14 +23,14 @@ public class Ichibarai_syushinController {
     @GetMapping("Premium")
     @ApiOperation("営業保険料計算")
 
-   public CalcPremiumResponse calcPremium(@NonNull @RequestBody SamplePensionCalcPremiumModel model, Object Premium){
+   public CalcPremiumResponse calcPremium(@NonNull @RequestBody IchijibaraiSyusinCalcPremiumModel model, Object Premium){
 
         //serviceをnew(constructor呼び出し)
+        Ichibarai_SyusinCalcPremiumService ichibarai_SyusinCalcPremiumService = new Ichibarai_SyusinCalcPremiumService(model.getInsuredS(),model.getInsuredAge(),model.getInsuredGender());
         //responseをnew
-        //responseにpremiumをset（newしたserviceで）
         CalcPremiumResponse calcPremiumResponse = new CalcPremiumResponse();
-        //calcPremiumResponse.setPremium(10000);
-        CalcPremiumResponse.setPremium(Premium);
+        //responseにpremiumをset（newしたserviceで）
+        calcPremiumResponse.setPremium(ichibarai_SyusinCalcPremiumService.getPremium());
 
         return calcPremiumResponse;
     }

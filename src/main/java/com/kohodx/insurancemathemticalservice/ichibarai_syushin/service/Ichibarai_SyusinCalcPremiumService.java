@@ -11,7 +11,7 @@ public class Ichibarai_SyusinCalcPremiumService {
     Ichibarai_SyusinCalcPremiumService ichibaraiSyusinCalcPremiumService;
 
     // 保険金（万単位）
-    private int insuredS;
+    private long insuredS;
     // 被保険者年齢
     private int insuredAge;
     private int Age;
