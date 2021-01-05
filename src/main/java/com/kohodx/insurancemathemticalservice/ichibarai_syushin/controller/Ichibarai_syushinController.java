@@ -22,6 +22,9 @@ public class Ichibarai_syushinController {
 
    public CalcPremiumResponse calcPremium(@NonNull @RequestBody SamplePensionCalcPremiumModel model, Object Premium){
 
+        //serviceをnew(constructor呼び出し)
+        //responseをnew
+        //responseにpremiumをset（newしたserviceで）
         CalcPremiumResponse calcPremiumResponse = new CalcPremiumResponse();
         //calcPremiumResponse.setPremium(10000);
         CalcPremiumResponse.setPremium(Premium);
